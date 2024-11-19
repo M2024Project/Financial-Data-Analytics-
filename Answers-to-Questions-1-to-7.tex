@@ -1,0 +1,2694 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Financial Data Analystics Project Report},
+  pdfauthor={Marklina Yakopa},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Financial Data Analystics Project Report}
+\author{Marklina Yakopa}
+\date{November 13th 2024}
+
+\begin{document}
+\maketitle
+
+\subsection{1. Exploratory data analysis I: 15
+points}\label{exploratory-data-analysis-i-15-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Problem 1}
+\NormalTok{da}\OtherTok{=}\FunctionTok{read.table}\NormalTok{(}\StringTok{"d{-}sbux3dx{-}0715.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   PERMNO     date      SBUX    vwretd    ewretd    sprtrn
+## 1  77702 20070103 -0.004799 -0.001347 -0.000159 -0.001199
+## 2  77702 20070104  0.001135  0.000547  0.000591  0.001228
+## 3  77702 20070105 -0.004251 -0.007288 -0.009809 -0.006085
+## 4  77702 20070108 -0.003700  0.002567  0.001731  0.002220
+## 5  77702 20070109 -0.004284 -0.000001  0.000262 -0.000517
+## 6  77702 20070110 -0.003155  0.002096  0.001338  0.001940
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rtn}\OtherTok{=}\NormalTok{da[,}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\FunctionTok{attach}\NormalTok{(rtn)}
+\FunctionTok{require}\NormalTok{(fBasics)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: fBasics
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (a)}
+\FunctionTok{basicStats}\NormalTok{(SBUX)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    SBUX
+## nobs        2266.000000
+## NAs            0.000000
+## Minimum       -0.109742
+## Maximum        0.183798
+## 1. Quartile   -0.009258
+## 3. Quartile    0.010326
+## Mean           0.000801
+## Median         0.000523
+## Sum            1.815383
+## SE Mean        0.000447
+## LCL Mean      -0.000076
+## UCL Mean       0.001678
+## Variance       0.000453
+## Stdev          0.021289
+## Skewness       0.555707
+## Kurtosis       6.575662
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(vwretd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  vwretd
+## nobs        2266.000000
+## NAs            0.000000
+## Minimum       -0.089763
+## Maximum        0.114898
+## 1. Quartile   -0.004844
+## 3. Quartile    0.006177
+## Mean           0.000318
+## Median         0.000857
+## Sum            0.720300
+## SE Mean        0.000286
+## LCL Mean      -0.000244
+## UCL Mean       0.000879
+## Variance       0.000186
+## Stdev          0.013630
+## Skewness      -0.175139
+## Kurtosis       8.807872
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(ewretd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  ewretd
+## nobs        2266.000000
+## NAs            0.000000
+## Minimum       -0.078240
+## Maximum        0.107422
+## 1. Quartile   -0.004676
+## 3. Quartile    0.005991
+## Mean           0.000415
+## Median         0.001174
+## Sum            0.940663
+## SE Mean        0.000263
+## LCL Mean      -0.000101
+## UCL Mean       0.000931
+## Variance       0.000157
+## Stdev          0.012521
+## Skewness      -0.209028
+## Kurtosis       7.765289
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(sprtrn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  sprtrn
+## nobs        2266.000000
+## NAs            0.000000
+## Minimum       -0.090350
+## Maximum        0.115800
+## 1. Quartile   -0.004806
+## 3. Quartile    0.006093
+## Mean           0.000254
+## Median         0.000688
+## Sum            0.575829
+## SE Mean        0.000286
+## LCL Mean      -0.000307
+## UCL Mean       0.000815
+## Variance       0.000185
+## Stdev          0.013619
+## Skewness      -0.078865
+## Kurtosis       9.730943
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (b)}
+\NormalTok{densitySBUX}\OtherTok{=}\FunctionTok{density}\NormalTok{(rtn}\SpecialCharTok{$}\NormalTok{SBUX)}
+\FunctionTok{plot}\NormalTok{(densitySBUX)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This is the same density plot but with labels}
+\FunctionTok{plot}\NormalTok{(densitySBUX,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}return\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}SBUX\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Density\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{normalTest}\NormalTok{(SBUX)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Title:
+##  Shapiro - Wilk Normality Test
+## 
+## Test Results:
+##   STATISTIC:
+##     W: 0.9251
+##   P VALUE:
+##     < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\NormalTok{lrtn}\OtherTok{=}\FunctionTok{log}\NormalTok{(rtn}\SpecialCharTok{+}\DecValTok{1}\NormalTok{) }\DocumentationTok{\#\#\# log returns}
+\FunctionTok{basicStats}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{SBUX)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             X..lrtn.SBUX
+## nobs         2266.000000
+## NAs             0.000000
+## Minimum        -0.116244
+## Maximum         0.168728
+## 1. Quartile    -0.009301
+## 3. Quartile     0.010273
+## Mean            0.000576
+## Median          0.000523
+## Sum             1.305183
+## SE Mean         0.000445
+## LCL Mean       -0.000297
+## UCL Mean        0.001449
+## Variance        0.000449
+## Stdev           0.021185
+## Skewness        0.302033
+## Kurtosis        5.910134
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{vwretd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             X..lrtn.vwretd
+## nobs           2266.000000
+## NAs               0.000000
+## Minimum          -0.094050
+## Maximum           0.108763
+## 1. Quartile      -0.004856
+## 3. Quartile       0.006158
+## Mean              0.000225
+## Median            0.000857
+## Sum               0.509376
+## SE Mean           0.000287
+## LCL Mean         -0.000338
+## UCL Mean          0.000787
+## Variance          0.000186
+## Stdev             0.013655
+## Skewness         -0.392742
+## Kurtosis          8.693544
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{ewretd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             X..lrtn.ewretd
+## nobs           2266.000000
+## NAs               0.000000
+## Minimum          -0.081470
+## Maximum           0.102035
+## 1. Quartile      -0.004687
+## 3. Quartile       0.005973
+## Mean              0.000337
+## Median            0.001173
+## Sum               0.762614
+## SE Mean           0.000263
+## LCL Mean         -0.000180
+## UCL Mean          0.000853
+## Variance          0.000157
+## Stdev             0.012541
+## Skewness         -0.389396
+## Kurtosis          7.661540
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{basicStats}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{sprtrn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             X..lrtn.sprtrn
+## nobs           2266.000000
+## NAs               0.000000
+## Minimum          -0.094695
+## Maximum           0.109572
+## 1. Quartile      -0.004818
+## 3. Quartile       0.006074
+## Mean              0.000161
+## Median            0.000688
+## Sum               0.365424
+## SE Mean           0.000286
+## LCL Mean         -0.000401
+## UCL Mean          0.000723
+## Variance          0.000186
+## Stdev             0.013637
+## Skewness         -0.314434
+## Kurtosis          9.496296
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (d)}
+\FunctionTok{t.test}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{SBUX)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  lrtn$SBUX
+## t = 1.2942, df = 2265, p-value = 0.1957
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.0002967458  0.0014487168
+## sample estimates:
+##    mean of x 
+## 0.0005759855
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{sprtrn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  lrtn$sprtrn
+## t = 0.56293, df = 2265, p-value = 0.5735
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.0004005110  0.0007230388
+## sample estimates:
+##    mean of x 
+## 0.0001612639
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (e)}
+\NormalTok{densitylogSBUX}\OtherTok{=}\FunctionTok{density}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{SBUX)}
+\NormalTok{densitylogvwretd}\OtherTok{=}\FunctionTok{density}\NormalTok{(lrtn}\SpecialCharTok{$}\NormalTok{vwretd)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\DocumentationTok{\#\# Put two plots in a frame (left and right)}
+\FunctionTok{plot}\NormalTok{(densitylogSBUX,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}log{-}return\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}SBUX\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Density\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(densitylogSBUX,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}log{-}return\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}vw index\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Density\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2. Factor models: 30 points}\label{factor-models-30-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Problem 2}
+\NormalTok{FFfactors }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/Student/Desktop/Assignment for Marklina/FamaFrenchFactors (1).csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T) }\CommentTok{\# Load csv data with names.}
+\FunctionTok{head}\NormalTok{(FFfactors) }\CommentTok{\# See the first 6 rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X   Mkt   SMB   HML
+## 1 196307 -0.39 -0.46 -0.82
+## 2 196308  5.07 -0.85  1.63
+## 3 196309 -1.57 -0.50  0.19
+## 4 196310  2.53 -1.30 -0.11
+## 5 196311 -0.85 -0.83  1.66
+## 6 196312  1.83 -1.87 -0.11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{attach}\NormalTok{(FFfactors) }\CommentTok{\#Now you can refer directly to the names of the variables.}
+\CommentTok{\#Note that you might receive a warning: "The following objects are masked from FFfactors ..."}
+\CommentTok{\# This just means that you are overwriting variables with these names that you have used before.}
+\CommentTok{\# For our purposes you can simply ignore this message.}
+\FunctionTok{names}\NormalTok{(FFfactors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "X"   "Mkt" "SMB" "HML"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rf }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/Student/Desktop/Assignment for Marklina/risk\_free\_rate (1).csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T) }\CommentTok{\# Load csv data with names.}
+\FunctionTok{head}\NormalTok{(rf) }\CommentTok{\# See the first 6 rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       rf     dateff
+## 1 0.0080 1980-01-31
+## 2 0.0089 1980-02-29
+## 3 0.0121 1980-03-31
+## 4 0.0126 1980-04-30
+## 5 0.0081 1980-05-30
+## 6 0.0061 1980-06-30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sv }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/Student/Desktop/Assignment for Marklina/SizeValuePortfolios.csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T) }\CommentTok{\# Load csv data with names.}
+\FunctionTok{head}\NormalTok{(sv) }\CommentTok{\# See the first 6 rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X SMALL.LoBM ME1.BM2 ME1.BM3 ME1.BM4 SMALL.HiBM ME2.BM1 ME2.BM2 ME2.BM3
+## 1 196307       0.85    0.24    0.56   -0.02      -1.22   -1.87    0.29   -0.84
+## 2 196308       3.80    2.15    1.32    2.29       4.73    5.40    4.65    4.36
+## 3 196309      -2.70    0.26   -1.09   -1.59      -0.38   -3.92   -1.57   -0.64
+## 4 196310       1.36   -0.63    1.24    0.05       2.37    1.19    4.30    2.34
+## 5 196311      -3.11   -4.32   -1.60   -1.00      -1.11   -4.18   -1.76   -0.71
+## 6 196312      -2.94   -0.55   -0.90   -1.75      -0.97   -0.68   -0.91    1.15
+##   ME2.BM4 ME2.BM5 ME3.BM1 ME3.BM2 ME3.BM3 ME3.BM4 ME3.BM5 ME4.BM1 ME4.BM2
+## 1   -1.90   -1.19   -1.84   -1.87   -0.81   -2.21   -1.80   -0.93   -1.63
+## 2    4.33    8.23    5.36    4.62    5.63    4.72    5.15    5.59    4.81
+## 3   -1.13   -2.91   -4.65   -1.52   -0.69   -0.10   -1.82   -2.67   -1.95
+## 4    2.26    3.93    2.26    0.50    2.70    2.16    1.07   -0.25    0.93
+## 5   -0.09   -0.11   -2.92   -1.58   -0.91   -0.90   -1.21   -0.91   -0.86
+## 6    0.97    0.12    0.60    1.17    1.52    1.52    0.47   -0.17    1.27
+##   ME4.BM3 ME4.BM4 ME4.BM5 BIG.LoBM ME5.BM2 ME5.BM3 ME5.BM4 BIG.HiBM
+## 1   -2.07   -1.67   -1.86     0.14    0.46    1.23   -0.45    -1.11
+## 2    6.12    7.56    5.35     5.77    4.22    4.77    8.16     6.25
+## 3   -2.00   -3.58   -1.99    -1.37   -0.77   -0.98   -0.12    -3.82
+## 4    2.30    5.34    0.61     5.33    1.73   -0.26    2.36     0.48
+## 5   -0.51    1.15    3.54    -1.26    0.98   -1.55   -2.05     1.37
+## 6    1.63    3.14    6.15     2.62    2.30    2.28    2.38     2.37
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(sv)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "X"          "SMALL.LoBM" "ME1.BM2"    "ME1.BM3"    "ME1.BM4"   
+##  [6] "SMALL.HiBM" "ME2.BM1"    "ME2.BM2"    "ME2.BM3"    "ME2.BM4"   
+## [11] "ME2.BM5"    "ME3.BM1"    "ME3.BM2"    "ME3.BM3"    "ME3.BM4"   
+## [16] "ME3.BM5"    "ME4.BM1"    "ME4.BM2"    "ME4.BM3"    "ME4.BM4"   
+## [21] "ME4.BM5"    "BIG.LoBM"   "ME5.BM2"    "ME5.BM3"    "ME5.BM4"   
+## [26] "BIG.HiBM"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Industry}\OtherTok{=}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/Student/Desktop/Assignment for Marklina/IndustryPortfolios.csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T) }\CommentTok{\# Load csv data with names.}
+\FunctionTok{head}\NormalTok{(Industry) }\CommentTok{\# See the first 6 rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X  Food  Beer Smoke Games Books Hshld Clths  Hlth Chems Txtls Cnstr
+## 1 196307  0.05 -2.19 -2.54 -3.48 -0.04 -0.15 -0.42  0.56 -1.00  3.49 -0.78
+## 2 196308  4.82  2.14  7.15  6.08  4.66  6.22  4.59  9.56  4.61  4.30  6.04
+## 3 196309 -1.43  1.23 -4.23 -4.05  2.67 -1.37 -3.97 -4.06 -0.78 -1.14 -1.25
+## 4 196310  2.41 -1.28  5.78 10.34 -1.15  4.25  2.70  3.38  3.48  5.72 -0.52
+## 5 196311 -0.44 -0.72 -5.63 -1.96 -0.18 -0.18 -1.44 -1.65  2.22  1.99 -1.05
+## 6 196312  2.99  1.21  5.98 -2.13 -0.21  4.26 -0.50  1.54  4.51  3.30  0.81
+##   Steel FabPr ElcEq Autos Carry Mines  Coal   Oil  Util Telcm Servs BusEq Paper
+## 1 -1.59 -3.08 -2.43 -0.15 -3.67 -2.90  0.32  2.34  0.81 -0.23 -3.48 -0.55 -1.38
+## 2  8.31  4.62  5.17  7.20  3.27  4.02  7.48  3.85  4.22  4.29  2.68  5.23  7.70
+## 3  0.29 -2.55 -1.68  0.31 -4.60 -0.96 -4.48 -3.62 -2.49  2.36 -2.65  0.29  1.45
+## 4  1.58  4.19 -0.49 10.14  2.28  3.16  9.45 -0.52 -0.67  3.40  1.51  8.66  1.65
+## 5 -1.83 -0.79 -1.72 -5.42  5.54  1.56  0.67 -1.19 -1.02  4.16 -3.78 -0.27 -0.93
+## 6  1.51  1.86 -2.55 -1.20 -4.22  6.05  5.42  4.65  2.42 -0.14  0.93  3.26  0.31
+##   Trans Whlsl Rtail Meals   Fin Other
+## 1 -2.54  0.04 -1.06 -4.21 -0.61 -2.63
+## 2  7.37  4.22  6.62  1.07  4.28  5.63
+## 3 -3.85 -1.65  1.15 -2.51 -3.25 -3.23
+## 4  1.77  1.41  0.41  1.11  0.68  2.88
+## 5  3.78 -4.03 -1.07 -3.61 -2.29  1.44
+## 6  4.17 -0.66  0.35  1.75  1.61 -2.54
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(Industry)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "X"     "Food"  "Beer"  "Smoke" "Games" "Books" "Hshld" "Clths" "Hlth" 
+## [10] "Chems" "Txtls" "Cnstr" "Steel" "FabPr" "ElcEq" "Autos" "Carry" "Mines"
+## [19] "Coal"  "Oil"   "Util"  "Telcm" "Servs" "BusEq" "Paper" "Trans" "Whlsl"
+## [28] "Rtail" "Meals" "Fin"   "Other"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (a)}
+\NormalTok{Industry}\OtherTok{=}\NormalTok{Industry[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{31}\NormalTok{]}
+\FunctionTok{attach}\NormalTok{(Industry) }\CommentTok{\#Now you can refer directly to the names of the variables.}
+\CommentTok{\#Note that you might receive a warning: "The following objects are masked from..."}
+\CommentTok{\# This just means that you are overwriting variables with these names that you have used before.}
+\CommentTok{\# For our purposes you can simply ignore this message.}
+\NormalTok{industrypca}\OtherTok{=}\FunctionTok{prcomp}\NormalTok{(Industry)}
+\FunctionTok{summary}\NormalTok{(industrypca)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Importance of components:
+##                            PC1     PC2     PC3     PC4     PC5     PC6     PC7
+## Standard deviation     26.6625 9.41932 7.08614 5.96143 5.87202 4.92238 4.53696
+## Proportion of Variance  0.6195 0.07732 0.04376 0.03097 0.03005 0.02112 0.01794
+## Cumulative Proportion   0.6195 0.69684 0.74060 0.77157 0.80162 0.82273 0.84067
+##                            PC8     PC9    PC10    PC11    PC12    PC13    PC14
+## Standard deviation     4.13409 4.00556 3.67210 3.55002 3.42637 3.27602 3.13419
+## Proportion of Variance 0.01489 0.01398 0.01175 0.01098 0.01023 0.00935 0.00856
+## Cumulative Proportion  0.85557 0.86955 0.88130 0.89228 0.90251 0.91187 0.92043
+##                           PC15    PC16    PC17    PC18    PC19    PC20    PC21
+## Standard deviation     3.00135 2.94679 2.86401 2.80948 2.61719 2.53213 2.45083
+## Proportion of Variance 0.00785 0.00757 0.00715 0.00688 0.00597 0.00559 0.00523
+## Cumulative Proportion  0.92828 0.93584 0.94299 0.94987 0.95584 0.96143 0.96666
+##                           PC22    PC23    PC24   PC25   PC26    PC27    PC28
+## Standard deviation     2.39389 2.27062 2.21289 2.1145 2.0600 2.01431 1.91264
+## Proportion of Variance 0.00499 0.00449 0.00427 0.0039 0.0037 0.00354 0.00319
+## Cumulative Proportion  0.97166 0.97615 0.98042 0.9843 0.9880 0.99155 0.99474
+##                           PC29   PC30
+## Standard deviation     1.78116 1.6934
+## Proportion of Variance 0.00276 0.0025
+## Cumulative Proportion  0.99750 1.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(industrypca)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (b)}
+\NormalTok{fitSteel}\OtherTok{=}\FunctionTok{lm}\NormalTok{(Steel}\SpecialCharTok{\textasciitilde{}}\NormalTok{industrypca}\SpecialCharTok{$}\NormalTok{x[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{])}
+\FunctionTok{summary}\NormalTok{(fitSteel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Steel ~ industrypca$x[, 1:3])
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.5130  -1.8227   0.0946   1.8095  14.1687 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              0.767904   0.126789   6.057 2.45e-09 ***
+## industrypca$x[, 1:3]PC1  0.227396   0.004759  47.780  < 2e-16 ***
+## industrypca$x[, 1:3]PC2 -0.178089   0.013472 -13.220  < 2e-16 ***
+## industrypca$x[, 1:3]PC3  0.322247   0.017907  17.995  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.121 on 602 degrees of freedom
+## Multiple R-squared:  0.8221, Adjusted R-squared:  0.8212 
+## F-statistic: 927.2 on 3 and 602 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Steel,fitSteel}\SpecialCharTok{$}\NormalTok{fitted.values)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitSteel2}\OtherTok{=}\FunctionTok{lm}\NormalTok{(Steel}\SpecialCharTok{\textasciitilde{}}\NormalTok{Mkt)}
+\FunctionTok{summary}\NormalTok{(fitSteel2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Steel ~ Mkt)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -19.1426  -2.8816  -0.1664   2.6262  24.9623 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  0.12522    0.18755   0.668    0.505    
+## Mkt          1.28925    0.04158  31.007   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.589 on 604 degrees of freedom
+## Multiple R-squared:  0.6142, Adjusted R-squared:  0.6135 
+## F-statistic: 961.5 on 1 and 604 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Steel,fitSteel2}\SpecialCharTok{$}\NormalTok{fitted.values)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-2-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitFood}\OtherTok{=}\FunctionTok{lm}\NormalTok{(Food}\SpecialCharTok{\textasciitilde{}}\NormalTok{industrypca}\SpecialCharTok{$}\NormalTok{x[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{])}
+\FunctionTok{summary}\NormalTok{(fitFood)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Food ~ industrypca$x[, 1:3])
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.9077 -1.1683 -0.0056  0.9667 15.9115 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)              1.074884   0.082316   13.06   <2e-16 ***
+## industrypca$x[, 1:3]PC1  0.120394   0.003090   38.96   <2e-16 ***
+## industrypca$x[, 1:3]PC2  0.093515   0.008746   10.69   <2e-16 ***
+## industrypca$x[, 1:3]PC3 -0.279068   0.011626  -24.00   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 2.026 on 602 degrees of freedom
+## Multiple R-squared:  0.7858, Adjusted R-squared:  0.7847 
+## F-statistic: 736.2 on 3 and 602 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Food,fitFood}\SpecialCharTok{$}\NormalTok{fitted.values)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-2-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fitFood2}\OtherTok{=}\FunctionTok{lm}\NormalTok{(Steel}\SpecialCharTok{\textasciitilde{}}\NormalTok{Mkt)}
+\FunctionTok{summary}\NormalTok{(fitFood2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Steel ~ Mkt)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -19.1426  -2.8816  -0.1664   2.6262  24.9623 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  0.12522    0.18755   0.668    0.505    
+## Mkt          1.28925    0.04158  31.007   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.589 on 604 degrees of freedom
+## Multiple R-squared:  0.6142, Adjusted R-squared:  0.6135 
+## F-statistic: 961.5 on 1 and 604 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Food,fitFood2}\SpecialCharTok{$}\NormalTok{fitted.values)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+
+\CommentTok{\#(c)}
+\NormalTok{svrf}\OtherTok{=}\NormalTok{sv[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{26}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{rf}\SpecialCharTok{$}\NormalTok{RF}
+
+\CommentTok{\# (d) need correct RiskFreeRate.csv file to complete this. }
+\CommentTok{\#fit1=lm(svrf[[2]]\textasciitilde{}Mkt)}
+\CommentTok{\#summary(fit1)}
+\CommentTok{\#fit3=lm(svrf[[15]]\textasciitilde{}Mkt)}
+\CommentTok{\#summary(fit3)}
+
+\CommentTok{\# (e)}
+\CommentTok{\#fit1=lm(svrf[[2]]\textasciitilde{}Mkt)}
+\CommentTok{\#summary(fit1)}
+\CommentTok{\#fit3=lm(svrf[[15]]\textasciitilde{}Mkt)}
+\CommentTok{\#summary(fit3)}
+
+\CommentTok{\# (f)}
+\CommentTok{\#fit2=lm(svrf[[2]]\textasciitilde{}Mkt+SMB+HML)}
+\CommentTok{\#summary(fit2)}
+\CommentTok{\#fit4=lm(svrf[[15]]\textasciitilde{}Mkt+SMB+HML)}
+\CommentTok{\#summary(fit4)}
+
+\CommentTok{\# (g)}
+\FunctionTok{library}\NormalTok{(lmtest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-2-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(sandwich)}
+\CommentTok{\#coeftest(fit1, vcov = vcov(fit1))}
+\CommentTok{\#coeftest(fit1, vcov = NeweyWest(fit1))}
+\CommentTok{\#coeftest(fit2, vcov = vcov(fit2))}
+\CommentTok{\#coeftest(fit2, vcov = NeweyWest(fit2))}
+\CommentTok{\#coeftest(fit3, vcov = vcov(fit3))}
+\CommentTok{\#coeftest(fit3, vcov = NeweyWest(fit3))}
+\CommentTok{\#coeftest(fit4, vcov = vcov(fit4))}
+\CommentTok{\#coeftest(fit4, vcov = NeweyWest(fit4))}
+
+\CommentTok{\# (h)}
+\CommentTok{\#pcasv=prcomp(svrf)}
+\CommentTok{\#plot(pcasv)}
+\CommentTok{\# (i)}
+\CommentTok{\#fit5=lm(Mkt\textasciitilde{}pcasv$x[,(1:3)])}
+\CommentTok{\#summary(fit5)}
+\CommentTok{\#plot(Mkt,fit5$fitted.values,ylab="fitted values")}
+\CommentTok{\#abline(c(0,1))}
+\CommentTok{\#fit6=lm(SMB\textasciitilde{}pcasv$x[,(1:3)])}
+\CommentTok{\#summary(fit6)}
+\CommentTok{\#plot(SMB,fit6$fitted.values,ylab="fitted values")}
+\CommentTok{\#abline(c(0,1))}
+\CommentTok{\#fit7=lm(HML\textasciitilde{}pcasv$x[,(1:3)])}
+\CommentTok{\#summary(fit7)}
+\CommentTok{\#plot(HML,fit7$fitted.values,ylab="fitted values")}
+\CommentTok{\#abline(c(0,1))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Bonus Questions: Note these questions are
+optional.}\label{bonus-questions-note-these-questions-are-optional.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Exploratory data analysis II: 15 points
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Problem 3}
+\NormalTok{da }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"d{-}exuseu{-}0516.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   year mon day   euro
+## 1 2005   1   3 1.3476
+## 2 2005   1   4 1.3295
+## 3 2005   1   5 1.3292
+## 4 2005   1   6 1.3187
+## 5 2005   1   7 1.3062
+## 6 2005   1  10 1.3109
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (a)}
+\NormalTok{rtn}\OtherTok{=}\FunctionTok{diff}\NormalTok{(}\FunctionTok{log}\NormalTok{(da}\SpecialCharTok{$}\NormalTok{euro)) }\DocumentationTok{\#\# Compute log return}
+\CommentTok{\# (b)}
+\FunctionTok{basicStats}\NormalTok{(rtn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                     rtn
+## nobs        2816.000000
+## NAs            0.000000
+## Minimum       -0.030031
+## Maximum        0.046208
+## 1. Quartile   -0.003446
+## 3. Quartile    0.003304
+## Mean          -0.000063
+## Median         0.000000
+## Sum           -0.176816
+## SE Mean        0.000120
+## LCL Mean      -0.000298
+## UCL Mean       0.000172
+## Variance       0.000040
+## Stdev          0.006363
+## Skewness       0.206116
+## Kurtosis       2.890412
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\NormalTok{densityEX}\OtherTok{=}\FunctionTok{density}\NormalTok{(rtn)}
+\FunctionTok{plot}\NormalTok{(densityEX,}\AttributeTok{xlab=}\StringTok{"ln{-}rtn"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}euro\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Density EX\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (d)}
+\FunctionTok{t.test}\NormalTok{(rtn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  rtn
+## t = -0.52367, df = 2815, p-value = 0.6005
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.0002978961  0.0001723167
+## sample estimates:
+##     mean of x 
+## -6.278971e-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (e)}
+\FunctionTok{normalTest}\NormalTok{(rtn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Title:
+##  Shapiro - Wilk Normality Test
+## 
+## Test Results:
+##   STATISTIC:
+##     W: 0.9732
+##   P VALUE:
+##     < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qqnorm}\NormalTok{(rtn) }\CommentTok{\# Quantile{-}quantile plot}
+\FunctionTok{qqline}\NormalTok{(rtn) }\CommentTok{\# Include a line in the quantile{-}quantile plot.}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# If empirical values are normally distributed}
+\CommentTok{\# then the quantiles should all be on the line.}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{4. Time-series model: 20
+points}\label{time-series-model-20-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Problem 4}
+\NormalTok{da}\OtherTok{=}\FunctionTok{read.table}\NormalTok{(}\StringTok{"m{-}COILWTICO.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         DATE VALUE
+## 1 1986-01-01 22.93
+## 2 1986-02-01 15.46
+## 3 1986-03-01 12.61
+## 4 1986-04-01 12.84
+## 5 1986-05-01 15.38
+## 6 1986-06-01 13.43
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (a)}
+\NormalTok{oil}\OtherTok{=}\NormalTok{da}\SpecialCharTok{$}\NormalTok{VALUE}
+\NormalTok{doil}\OtherTok{=}\FunctionTok{diff}\NormalTok{(oil)}
+\FunctionTok{dim}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 362   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (b)}
+\NormalTok{tdx }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{362}\NormalTok{)}\SpecialCharTok{/}\DecValTok{12}\SpecialCharTok{+}\DecValTok{1986}
+\FunctionTok{plot}\NormalTok{(tdx,oil,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}coil\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(tdx[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{],doil,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}diff(oil)\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\CommentTok{\# If you have not installed the package fUnitRoots please use the following command:}
+\CommentTok{\#install.packages("fUnitRoots")}
+\FunctionTok{require}\NormalTok{(fUnitRoots)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: fUnitRoots
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{adfTest}\NormalTok{(oil,}\AttributeTok{lags=}\DecValTok{11}\NormalTok{,}\AttributeTok{type=}\StringTok{"c"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Title:
+##  Augmented Dickey-Fuller Test
+## 
+## Test Results:
+##   PARAMETER:
+##     Lag Order: 11
+##   STATISTIC:
+##     Dickey-Fuller: -1.6257
+##   P VALUE:
+##     0.4521 
+## 
+## Description:
+##  Wed Nov 13 13:45:55 2024 by user: Student
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{adfTest}\NormalTok{(doil,}\AttributeTok{lags=}\DecValTok{11}\NormalTok{,}\AttributeTok{type=}\StringTok{"c"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in adfTest(doil, lags = 11, type = "c"): p-value smaller than printed
+## p-value
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Title:
+##  Augmented Dickey-Fuller Test
+## 
+## Test Results:
+##   PARAMETER:
+##     Lag Order: 11
+##   STATISTIC:
+##     Dickey-Fuller: -5.7315
+##   P VALUE:
+##     0.01 
+## 
+## Description:
+##  Wed Nov 13 13:45:55 2024 by user: Student
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (d)}
+\FunctionTok{acf}\NormalTok{(oil)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pacf}\NormalTok{(oil)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{acf}\NormalTok{(doil)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pacf}\NormalTok{(doil)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (e)}
+\FunctionTok{Box.test}\NormalTok{(doil,}\AttributeTok{lag=}\DecValTok{12}\NormalTok{,}\AttributeTok{type=}\StringTok{"Ljung"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Box-Ljung test
+## 
+## data:  doil
+## X-squared = 110.11, df = 12, p-value < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (f)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"forecast"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'quantmod':
+##   method            from
+##   as.zoo.data.frame zoo
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ARoil}\OtherTok{=}\FunctionTok{arima}\NormalTok{(doil,}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\NormalTok{ARoil}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = doil, order = c(6, 0, 0))
+## 
+## Coefficients:
+##         ar1     ar2      ar3     ar4      ar5      ar6  intercept
+##       0.362  0.0779  -0.0761  0.0059  -0.0291  -0.1626     0.0260
+## s.e.  0.052  0.0554   0.0556  0.0555   0.0553   0.0520     0.2483
+## 
+## sigma^2 estimated as 14.95:  log likelihood = -1000.7,  aic = 2017.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARoil)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# You can also use the auto.arima command to fit an AR model}
+\CommentTok{\# ARoil2=auto.arima(doil,max.p = 20, max.q = 0, d = 0)}
+\CommentTok{\# ARoil2}
+\CommentTok{\# tsdiag(ARoil2)}
+\CommentTok{\# (f)}
+\CommentTok{\#You can use the auto.arima command to fit an ARMA model}
+\CommentTok{\# ARIMAoil=auto.arima(doil)}
+\CommentTok{\# ARIMAoil}
+\CommentTok{\# tsdiag(ARIMAoil)}
+\NormalTok{ARIMAoil2}\OtherTok{=}\FunctionTok{arima}\NormalTok{(doil,}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{6}\NormalTok{))}
+\NormalTok{ARIMAoil2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = doil, order = c(1, 0, 6))
+## 
+## Coefficients:
+##          ar1      ma1      ma2      ma3      ma4      ma5      ma6  intercept
+##       0.6892  -0.3330  -0.0384  -0.1289  -0.0149  -0.0312  -0.1717     0.0599
+## s.e.  0.1240   0.1274   0.0672   0.0585   0.0543   0.0547   0.0551     0.1897
+## 
+## sigma^2 estimated as 14.91:  log likelihood = -1000.14,  aic = 2018.28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARIMAoil2,}\AttributeTok{gof=}\DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (g)}
+\NormalTok{Oilpredict}\OtherTok{=}\FunctionTok{predict}\NormalTok{(ARIMAoil2,}\DecValTok{4}\NormalTok{)}
+\NormalTok{Oilpredict}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $pred
+## Time Series:
+## Start = 362 
+## End = 365 
+## Frequency = 1 
+## [1] -0.4453396  0.8000120  1.8028413  2.3216605
+## 
+## $se
+## Time Series:
+## Start = 362 
+## End = 365 
+## Frequency = 1 
+## [1] 3.860809 4.098314 4.175542 4.175879
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lcl}\OtherTok{=}\NormalTok{Oilpredict}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{{-}1.96}\SpecialCharTok{*}\NormalTok{Oilpredict}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{ucl}\OtherTok{=}\NormalTok{Oilpredict}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{+1.96}\SpecialCharTok{*}\NormalTok{Oilpredict}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{cf}\OtherTok{=}\FunctionTok{cbind}\NormalTok{(lcl,ucl)}
+\NormalTok{cf}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Time Series:
+## Start = 362 
+## End = 365 
+## Frequency = 1 
+##           lcl       ucl
+## 362 -8.012524  7.121845
+## 363 -7.232684  8.832708
+## 364 -6.381221  9.986903
+## 365 -5.863062 10.506383
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Oilforecast}\OtherTok{=}\FunctionTok{forecast}\NormalTok{(ARIMAoil2,}\DecValTok{4}\NormalTok{)}
+\NormalTok{Oilforecast}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Point Forecast     Lo 80    Hi 80     Lo 95     Hi 95
+## 362     -0.4453396 -5.393165 4.502486 -8.012385  7.121706
+## 363      0.8000120 -4.452189 6.052213 -7.232536  8.832560
+## 364      1.8028413 -3.548331 7.154013 -6.381070  9.986753
+## 365      2.3216605 -3.029943 7.673264 -5.862911 10.506232
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Oilforecast)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-9.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The next plot includes only the last 24 observations and labels}
+\FunctionTok{plot}\NormalTok{(Oilforecast,}\AttributeTok{include=}\DecValTok{24}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"time"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"oil return"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Prediction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-4-10.pdf}
+
+\subsection{5. GARCH: 20 points}\label{garch-20-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Problem 5}
+\FunctionTok{require}\NormalTok{(forecast)}
+\NormalTok{da}\OtherTok{=}\FunctionTok{read.table}\NormalTok{(}\StringTok{"d{-}amzn3dx0914.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   PERMNO     date      amzn    vwretd    ewretd    sprtrn
+## 1  84788 20090102  0.060062  0.030501  0.038274  0.031608
+## 2  84788 20090105 -0.005519 -0.000579  0.016764 -0.004668
+## 3  84788 20090106  0.061043  0.011298  0.033647  0.007817
+## 4  84788 20090107 -0.020223 -0.030489 -0.022271 -0.030010
+## 5  84788 20090108  0.017082  0.006284  0.011896  0.003397
+## 6  84788 20090109 -0.028866 -0.022409 -0.018748 -0.021303
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rt}\OtherTok{=}\FunctionTok{log}\NormalTok{(da}\SpecialCharTok{$}\NormalTok{amzn}\SpecialCharTok{+}\DecValTok{1}\NormalTok{)}\SpecialCharTok{*}\DecValTok{100}
+\CommentTok{\# (a)}
+\FunctionTok{t.test}\NormalTok{(rt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  rt
+## t = 2.0296, df = 1509, p-value = 0.04257
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  0.003999691 0.234462533
+## sample estimates:
+## mean of x 
+## 0.1192311
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (b)}
+\FunctionTok{acf}\NormalTok{(rt)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{Box.test}\NormalTok{(rt,}\AttributeTok{lag=}\DecValTok{10}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}Ljung\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Box-Ljung test
+## 
+## data:  rt
+## X-squared = 10.974, df = 10, p-value = 0.3595
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\FunctionTok{library}\NormalTok{(rugarch)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: parallel
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rugarch'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:fBasics':
+## 
+##     qgh, qnig
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     sigma
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{garch.norm }\OtherTok{=} \FunctionTok{ugarchspec}\NormalTok{(}\AttributeTok{mean.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{armaOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)),}
+\AttributeTok{variance.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{garchOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)))}
+\NormalTok{amazonGarch }\OtherTok{=} \FunctionTok{ugarchfit}\NormalTok{(}\AttributeTok{data=}\NormalTok{rt, }\AttributeTok{spec=}\NormalTok{garch.norm)}
+\FunctionTok{show}\NormalTok{(amazonGarch)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : sGARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : norm 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error   t value Pr(>|t|)
+## mu      0.109363    0.056675    1.9297 0.053650
+## omega   0.023032    0.005897    3.9059 0.000094
+## alpha1  0.007252    0.001621    4.4739 0.000008
+## beta1   0.987686    0.000758 1302.8981 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error   t value Pr(>|t|)
+## mu      0.109363    0.052929    2.0662 0.038808
+## omega   0.023032    0.014680    1.5689 0.116678
+## alpha1  0.007252    0.004172    1.7382 0.082168
+## beta1   0.987686    0.000882 1119.9290 0.000000
+## 
+## LogLikelihood : -3365.187 
+## 
+## Information Criteria
+## ------------------------------------
+##                    
+## Akaike       4.4625
+## Bayes        4.4766
+## Shibata      4.4625
+## Hannan-Quinn 4.4677
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                      0.913  0.3393
+## Lag[2*(p+q)+(p+q)-1][2]     1.184  0.4424
+## Lag[4*(p+q)+(p+q)-1][5]     2.094  0.5964
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                      1.240  0.2654
+## Lag[2*(p+q)+(p+q)-1][5]     1.386  0.7679
+## Lag[4*(p+q)+(p+q)-1][9]     1.610  0.9461
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]   0.05111 0.500 2.000  0.8211
+## ARCH Lag[5]   0.25510 1.440 1.667  0.9520
+## ARCH Lag[7]   0.40838 2.315 1.543  0.9859
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  0.6148
+## Individual Statistics:              
+## mu     0.23836
+## omega  0.10117
+## alpha1 0.12173
+## beta1  0.09862
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          1.07 1.24 1.6
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value   prob sig
+## Sign Bias           0.7049 0.4810    
+## Negative Sign Bias  0.1673 0.8671    
+## Positive Sign Bias  0.9319 0.3515    
+## Joint Effect        1.1292 0.7700    
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     101.3    3.098e-13
+## 2    30     114.3    4.486e-12
+## 3    40     124.0    8.834e-11
+## 4    50     138.8    1.605e-10
+## 
+## 
+## Elapsed time : 0.2602589
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch, }\AttributeTok{which=}\StringTok{"all"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## please wait...calculating quantiles...
+\end{verbatim}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch, }\AttributeTok{which=}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch, }\AttributeTok{which=}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch, }\AttributeTok{which=}\DecValTok{11}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (d)}
+\NormalTok{arma.garch.t }\OtherTok{=} \FunctionTok{ugarchspec}\NormalTok{(}\AttributeTok{mean.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{armaOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)),}
+\AttributeTok{variance.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{garchOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)),}
+\AttributeTok{distribution.model =} \StringTok{"std"}\NormalTok{)}
+\NormalTok{amazonGarch.t }\OtherTok{=} \FunctionTok{ugarchfit}\NormalTok{(}\AttributeTok{data=}\NormalTok{rt, }\AttributeTok{spec=}\NormalTok{arma.garch.t)}
+\FunctionTok{show}\NormalTok{(amazonGarch.t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : sGARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : std 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error  t value Pr(>|t|)
+## mu      0.087060    0.046113   1.8880 0.059032
+## omega   0.060535    0.017407   3.4776 0.000506
+## alpha1  0.017064    0.003726   4.5796 0.000005
+## beta1   0.968300    0.004272 226.6839 0.000000
+## shape   4.311221    0.428313  10.0656 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error  t value Pr(>|t|)
+## mu      0.087060    0.041887   2.0785 0.037665
+## omega   0.060535    0.015855   3.8181 0.000134
+## alpha1  0.017064    0.003701   4.6111 0.000004
+## beta1   0.968300    0.001813 534.1900 0.000000
+## shape   4.311221    0.452458   9.5284 0.000000
+## 
+## LogLikelihood : -3195.838 
+## 
+## Information Criteria
+## ------------------------------------
+##                    
+## Akaike       4.2395
+## Bayes        4.2571
+## Shibata      4.2395
+## Hannan-Quinn 4.2461
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                     0.9535  0.3288
+## Lag[2*(p+q)+(p+q)-1][2]    1.1516  0.4516
+## Lag[4*(p+q)+(p+q)-1][5]    2.0691  0.6022
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                     0.2485  0.6182
+## Lag[2*(p+q)+(p+q)-1][5]    0.4458  0.9657
+## Lag[4*(p+q)+(p+q)-1][9]    0.6631  0.9962
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]    0.2343 0.500 2.000  0.6284
+## ARCH Lag[5]    0.3352 1.440 1.667  0.9308
+## ARCH Lag[7]    0.5063 2.315 1.543  0.9778
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  1.4469
+## Individual Statistics:              
+## mu     0.01125
+## omega  0.51229
+## alpha1 0.92420
+## beta1  0.62430
+## shape  0.73278
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          1.28 1.47 1.88
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value   prob sig
+## Sign Bias           0.6780 0.4979    
+## Negative Sign Bias  0.3314 0.7404    
+## Positive Sign Bias  0.4491 0.6534    
+## Joint Effect        0.4823 0.9228    
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     19.38       0.4329
+## 2    30     22.82       0.7847
+## 3    40     31.03       0.8146
+## 4    50     36.29       0.9109
+## 
+## 
+## Elapsed time : 0.3346369
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch.t, }\AttributeTok{which=}\StringTok{"all"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## please wait...calculating quantiles...
+\end{verbatim}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch.t, }\AttributeTok{which=}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch.t, }\AttributeTok{which=}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonGarch.t, }\AttributeTok{which=}\DecValTok{11}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-9.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (f)}
+\NormalTok{amazonforecast}\OtherTok{=}\FunctionTok{ugarchforecast}\NormalTok{(amazonGarch.t, }\AttributeTok{data =}\NormalTok{ rt, }\AttributeTok{n.ahead =} \DecValTok{5}\NormalTok{)}
+\FunctionTok{show}\NormalTok{(amazonforecast)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *------------------------------------*
+## *       GARCH Model Forecast         *
+## *------------------------------------*
+## Model: sGARCH
+## Horizon: 5
+## Roll Steps: 0
+## Out of Sample: 0
+## 
+## 0-roll forecast [T0=1974-02-19]:
+##      Series Sigma
+## T+1 0.08706 1.873
+## T+2 0.08706 1.876
+## T+3 0.08706 1.878
+## T+4 0.08706 1.881
+## T+5 0.08706 1.883
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonforecast,}\AttributeTok{which=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-10.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(amazonforecast,}\AttributeTok{which=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-5-11.pdf}
+
+\subsection{6.Time-series model II: 30 bonus
+points}\label{time-series-model-ii-30-bonus-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Problem 6}
+\FunctionTok{require}\NormalTok{(forecast)}
+\NormalTok{da }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"m{-}globaltemp.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\NormalTok{dd }\OtherTok{\textless{}{-}}\NormalTok{ da[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{13}\NormalTok{]}
+\NormalTok{xt }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{t}\NormalTok{(dd))}
+\NormalTok{zt }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(xt)}
+\FunctionTok{length}\NormalTok{(xt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1632
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tdx }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{1632}\NormalTok{)}\SpecialCharTok{/}\DecValTok{12}\SpecialCharTok{+}\DecValTok{1880}
+\CommentTok{\# (a)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(tdx,xt,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}temp\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(tdx[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{],zt,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}diff(temp)\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\CommentTok{\# (b)}
+\FunctionTok{require}\NormalTok{(fUnitRoots)}
+\FunctionTok{adfTest}\NormalTok{(xt,}\AttributeTok{lags=}\DecValTok{11}\NormalTok{,}\AttributeTok{type=}\StringTok{"c"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Title:
+##  Augmented Dickey-Fuller Test
+## 
+## Test Results:
+##   PARAMETER:
+##     Lag Order: 11
+##   STATISTIC:
+##     Dickey-Fuller: -1.7197
+##   P VALUE:
+##     0.4179 
+## 
+## Description:
+##  Wed Nov 13 13:46:04 2024 by user: Student
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{adfTest}\NormalTok{(zt,}\AttributeTok{lags=}\DecValTok{11}\NormalTok{,}\AttributeTok{type=}\StringTok{"c"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in adfTest(zt, lags = 11, type = "c"): p-value smaller than printed
+## p-value
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Title:
+##  Augmented Dickey-Fuller Test
+## 
+## Test Results:
+##   PARAMETER:
+##     Lag Order: 11
+##   STATISTIC:
+##     Dickey-Fuller: -17.6881
+##   P VALUE:
+##     0.01 
+## 
+## Description:
+##  Wed Nov 13 13:46:04 2024 by user: Student
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\FunctionTok{t.test}\NormalTok{(zt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  zt
+## t = 0.22712, df = 1630, p-value = 0.8204
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.9270074  1.1698033
+## sample estimates:
+## mean of x 
+## 0.1213979
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (d)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\FunctionTok{acf}\NormalTok{(zt)}
+\FunctionTok{pacf}\NormalTok{(zt)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\CommentTok{\# (e)}
+\FunctionTok{Box.test}\NormalTok{(zt,}\AttributeTok{lag=}\DecValTok{12}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}Ljung\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Box-Ljung test
+## 
+## data:  zt
+## X-squared = 253.49, df = 12, p-value < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (f)}
+\NormalTok{ARtemp}\OtherTok{=}\FunctionTok{auto.arima}\NormalTok{(zt,}\AttributeTok{max.p =} \DecValTok{20}\NormalTok{, }\AttributeTok{max.q =} \DecValTok{0}\NormalTok{, }\AttributeTok{d =} \DecValTok{0}\NormalTok{)}
+\NormalTok{ARtemp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Series: zt 
+## ARIMA(11,0,0) with zero mean 
+## 
+## Coefficients:
+##           ar1      ar2      ar3      ar4      ar5      ar6      ar7      ar8
+##       -0.5723  -0.4264  -0.3559  -0.3062  -0.2923  -0.2732  -0.2137  -0.2041
+## s.e.   0.0247   0.0283   0.0299   0.0308   0.0313   0.0314   0.0313   0.0308
+##           ar9     ar10     ar11
+##       -0.1894  -0.1132  -0.0929
+## s.e.   0.0299   0.0283   0.0247
+## 
+## sigma^2 = 346.1:  log likelihood = -7077.32
+## AIC=14178.64   AICc=14178.83   BIC=14243.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARtemp)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ARtemp2}\OtherTok{=}\FunctionTok{arima}\NormalTok{(zt,}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{11}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{include.mean=}\NormalTok{F)}
+\NormalTok{ARtemp2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = zt, order = c(11, 0, 0), include.mean = F)
+## 
+## Coefficients:
+##           ar1      ar2      ar3      ar4      ar5      ar6      ar7      ar8
+##       -0.5723  -0.4264  -0.3559  -0.3062  -0.2923  -0.2732  -0.2137  -0.2041
+## s.e.   0.0247   0.0283   0.0299   0.0308   0.0313   0.0314   0.0313   0.0308
+##           ar9     ar10     ar11
+##       -0.1894  -0.1132  -0.0929
+## s.e.   0.0299   0.0283   0.0247
+## 
+## sigma^2 estimated as 343.8:  log likelihood = -7077.32,  aic = 14178.64
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARtemp2,}\AttributeTok{gof=}\DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (g)}
+\NormalTok{ARtemp3}\OtherTok{=}\FunctionTok{arima}\NormalTok{(xt,}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{11}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\NormalTok{ARtemp3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = xt, order = c(11, 1, 0))
+## 
+## Coefficients:
+##           ar1      ar2      ar3      ar4      ar5      ar6      ar7      ar8
+##       -0.5723  -0.4264  -0.3559  -0.3062  -0.2923  -0.2732  -0.2137  -0.2041
+## s.e.   0.0247   0.0283   0.0299   0.0308   0.0313   0.0314   0.0313   0.0308
+##           ar9     ar10     ar11
+##       -0.1894  -0.1132  -0.0929
+## s.e.   0.0299   0.0283   0.0247
+## 
+## sigma^2 estimated as 343.8:  log likelihood = -7077.32,  aic = 14178.64
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PredictTemp }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(ARtemp3,}\DecValTok{12}\NormalTok{)}
+\NormalTok{PredictTemp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $pred
+## Time Series:
+## Start = 1633 
+## End = 1644 
+## Frequency = 1 
+##  [1] 129.1232 123.5386 121.3828 118.4179 115.6651 115.6414 115.1640 115.9398
+##  [9] 118.1312 120.5299 121.8315 122.8075
+## 
+## $se
+## Time Series:
+## Start = 1633 
+## End = 1644 
+## Frequency = 1 
+##  [1] 18.54211 20.16716 21.06854 21.67045 22.14065 22.45831 22.71378 23.04834
+##  [9] 23.31226 23.55386 23.96549 24.35400
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (h)}
+\NormalTok{lcl }\OtherTok{\textless{}{-}}\NormalTok{ PredictTemp}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{{-}1.96}\SpecialCharTok{*}\NormalTok{PredictTemp}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{ucl }\OtherTok{\textless{}{-}}\NormalTok{ PredictTemp}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{+1.96}\SpecialCharTok{*}\NormalTok{PredictTemp}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{cf }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(lcl,ucl)}
+\NormalTok{cf[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           lcl      ucl
+## [1,] 92.78064 165.4657
+## [2,] 84.01097 163.0662
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cf[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{12}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            lcl      ucl
+##  [1,] 92.78064 165.4657
+##  [2,] 84.01097 163.0662
+##  [3,] 80.08851 162.6772
+##  [4,] 75.94382 160.8920
+##  [5,] 72.26940 159.0607
+##  [6,] 71.62310 159.6597
+##  [7,] 70.64502 159.6830
+##  [8,] 70.76509 161.1146
+##  [9,] 72.43918 163.8232
+## [10,] 74.36439 166.6955
+## [11,] 74.85917 168.8039
+## [12,] 75.07368 170.5414
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (i)}
+\FunctionTok{require}\NormalTok{(forecast)}
+\NormalTok{ARIMAtemp}\OtherTok{=}\FunctionTok{auto.arima}\NormalTok{(xt)}
+\NormalTok{ARIMAtemp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Series: xt 
+## ARIMA(1,1,2) with drift 
+## 
+## Coefficients:
+##          ar1      ma1     ma2   drift
+##       0.7189  -1.3106  0.3329  0.0795
+## s.e.  0.0472   0.0593  0.0540  0.0369
+## 
+## sigma^2 = 342.5:  log likelihood = -7072.41
+## AIC=14154.82   AICc=14154.86   BIC=14181.8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARIMAtemp,}\AttributeTok{gof=}\DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ARIMAtemp2}\OtherTok{=}\FunctionTok{arima}\NormalTok{(zt,}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{),}\AttributeTok{seasonal=}\FunctionTok{list}\NormalTok{(}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{period=}\DecValTok{12}\NormalTok{))}
+\NormalTok{ARIMAtemp2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = zt, order = c(1, 0, 2), seasonal = list(order = c(1, 0, 0), period = 12))
+## 
+## Coefficients:
+##          ar1      ma1     ma2    sar1  intercept
+##       0.7423  -1.3429  0.3600  0.0937     0.0793
+## s.e.  0.0413   0.0546  0.0511  0.0252     0.0342
+## 
+## sigma^2 estimated as 338.8:  log likelihood = -7065.56,  aic = 14143.12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARIMAtemp2,}\AttributeTok{gof=}\DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (j)}
+\NormalTok{ARIMAtemp3}\OtherTok{=}\FunctionTok{arima}\NormalTok{(xt,}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{),}\AttributeTok{seasonal=}\FunctionTok{list}\NormalTok{(}\AttributeTok{order=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{period=}\DecValTok{12}\NormalTok{))}
+\NormalTok{ARIMAtemp3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## arima(x = xt, order = c(1, 1, 2), seasonal = list(order = c(1, 0, 0), period = 12))
+## 
+## Coefficients:
+##          ar1      ma1     ma2    sar1
+##       0.7320  -1.3288  0.3503  0.0921
+## s.e.  0.0441   0.0570  0.0526  0.0253
+## 
+## sigma^2 estimated as 339.7:  log likelihood = -7067.82,  aic = 14145.65
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tsdiag}\NormalTok{(ARIMAtemp3,}\AttributeTok{gof=}\DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PredictTemp}\OtherTok{=}\FunctionTok{predict}\NormalTok{(ARIMAtemp3,}\DecValTok{12}\NormalTok{)}
+\NormalTok{PredictTemp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $pred
+## Time Series:
+## Start = 1633 
+## End = 1644 
+## Frequency = 1 
+##  [1] 122.06472 115.74604 111.78999 106.32858 103.62970 102.24940  99.42832
+##  [8]  99.45501 100.02232 100.41474 101.22510 101.77075
+## 
+## $se
+## Time Series:
+## Start = 1633 
+## End = 1644 
+## Frequency = 1 
+##  [1] 18.43157 19.87371 20.71308 21.23270 21.57245 21.80668 21.97682 22.10682
+##  [9] 22.21097 22.29805 22.37360 22.44122
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lcl }\OtherTok{\textless{}{-}}\NormalTok{ PredictTemp}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{{-}1.96}\SpecialCharTok{*}\NormalTok{PredictTemp}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{ucl }\OtherTok{\textless{}{-}}\NormalTok{ PredictTemp}\SpecialCharTok{$}\NormalTok{pred}\FloatTok{+1.96}\SpecialCharTok{*}\NormalTok{PredictTemp}\SpecialCharTok{$}\NormalTok{se}
+\NormalTok{cf }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(lcl,ucl)}
+\NormalTok{cf[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           lcl      ucl
+## [1,] 85.93885 158.1906
+## [2,] 76.79356 154.6985
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cf[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{12}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            lcl      ucl
+##  [1,] 85.93885 158.1906
+##  [2,] 76.79356 154.6985
+##  [3,] 71.19235 152.3876
+##  [4,] 64.71247 147.9447
+##  [5,] 61.34770 145.9117
+##  [6,] 59.50831 144.9905
+##  [7,] 56.35376 142.5029
+##  [8,] 56.12564 142.7844
+##  [9,] 56.48882 143.5558
+## [10,] 56.71057 144.1189
+## [11,] 57.37285 145.0774
+## [12,] 57.78596 145.7555
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Tempforecast}\OtherTok{=}\FunctionTok{forecast}\NormalTok{(ARIMAtemp3,}\DecValTok{12}\NormalTok{)}
+\NormalTok{Tempforecast}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 1633      122.06472 98.44372 145.6857 85.93951 158.1899
+## 1634      115.74604 90.27685 141.2152 76.79427 154.6978
+## 1635      111.78999 85.24511 138.3349 71.19309 152.3869
+## 1636      106.32858 79.11777 133.5394 64.71324 147.9439
+## 1637      103.62970 75.98350 131.2759 61.34848 145.9109
+## 1638      102.24940 74.30302 130.1958 59.50910 144.9897
+## 1639       99.42832 71.26390 127.5928 56.35455 142.5021
+## 1640       99.45501 71.12398 127.7860 56.12643 142.7836
+## 1641      100.02232 71.55782 128.4868 56.48962 143.5550
+## 1642      100.41474 71.83864 128.9908 56.71137 144.1181
+## 1643      101.22510 72.55218 129.8980 57.37365 145.0766
+## 1644      101.77075 73.01117 130.5303 57.78677 145.7547
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Tempforecast)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(Tempforecast,}\AttributeTok{include=}\DecValTok{24}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"time"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"temperature"}\NormalTok{,}\AttributeTok{main=}\StringTok{"Prediction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-6-9.pdf}
+
+\subsection{7. GARCH II: 30 bonus
+points}\label{garch-ii-30-bonus-points}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Problem 7}
+\NormalTok{da}\OtherTok{=}\FunctionTok{read.table}\NormalTok{(}\StringTok{"d{-}sbux3dx{-}0715.txt"}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
+\FunctionTok{head}\NormalTok{(da)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   PERMNO     date      SBUX    vwretd    ewretd    sprtrn
+## 1  77702 20070103 -0.004799 -0.001347 -0.000159 -0.001199
+## 2  77702 20070104  0.001135  0.000547  0.000591  0.001228
+## 3  77702 20070105 -0.004251 -0.007288 -0.009809 -0.006085
+## 4  77702 20070108 -0.003700  0.002567  0.001731  0.002220
+## 5  77702 20070109 -0.004284 -0.000001  0.000262 -0.000517
+## 6  77702 20070110 -0.003155  0.002096  0.001338  0.001940
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rtn}\OtherTok{=}\NormalTok{da[,}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\FunctionTok{attach}\NormalTok{(rtn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The following objects are masked from rtn (pos = 13):
+## 
+##     ewretd, SBUX, sprtrn, vwretd
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vw}\OtherTok{=}\FunctionTok{log}\NormalTok{(da}\SpecialCharTok{$}\NormalTok{vwretd}\SpecialCharTok{+}\DecValTok{1}\NormalTok{)}
+\CommentTok{\# (a)}
+\FunctionTok{t.test}\NormalTok{(vw)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  vw
+## t = 0.78365, df = 2265, p-value = 0.4333
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.0003377266  0.0007873080
+## sample estimates:
+##    mean of x 
+## 0.0002247907
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{Box.test}\NormalTok{(vw,}\AttributeTok{lag=}\DecValTok{12}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}Ljung\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Box-Ljung test
+## 
+## data:  vw
+## X-squared = 41.512, df = 12, p-value = 4.023e-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{acf}\NormalTok{(vw)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{acf}\NormalTok{(vw}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{garch.norm }\OtherTok{=} \FunctionTok{ugarchspec}\NormalTok{(}\AttributeTok{mean.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{armaOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{include.mean =} \ConstantTok{FALSE}\NormalTok{),}
+\AttributeTok{variance.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{garchOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)))}
+\NormalTok{vwGarch }\OtherTok{=} \FunctionTok{ugarchfit}\NormalTok{(}\AttributeTok{data=}\NormalTok{vw, }\AttributeTok{spec=}\NormalTok{garch.norm)}
+\FunctionTok{show}\NormalTok{(vwGarch)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : sGARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : norm 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error  t value Pr(>|t|)
+## omega   0.000003    0.000001   1.9402 0.052357
+## alpha1  0.106140    0.013764   7.7113 0.000000
+## beta1   0.875661    0.015626  56.0379 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error  t value Pr(>|t|)
+## omega   0.000003    0.000007  0.38952 0.696889
+## alpha1  0.106140    0.039123  2.71298 0.006668
+## beta1   0.875661    0.057114 15.33175 0.000000
+## 
+## LogLikelihood : 7118.418 
+## 
+## Information Criteria
+## ------------------------------------
+##                     
+## Akaike       -6.2802
+## Bayes        -6.2726
+## Shibata      -6.2802
+## Hannan-Quinn -6.2774
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                      3.482 0.06204
+## Lag[2*(p+q)+(p+q)-1][2]     3.483 0.10387
+## Lag[4*(p+q)+(p+q)-1][5]     4.826 0.16751
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic  p-value
+## Lag[1]                      6.885 0.008693
+## Lag[2*(p+q)+(p+q)-1][5]    13.513 0.001110
+## Lag[4*(p+q)+(p+q)-1][9]    15.073 0.003435
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]  0.003359 0.500 2.000  0.9538
+## ARCH Lag[5]  0.474006 1.440 1.667  0.8913
+## ARCH Lag[7]  0.589874 2.315 1.543  0.9695
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  12.9665
+## Individual Statistics:            
+## omega  0.791
+## alpha1 1.023
+## beta1  1.233
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          0.846 1.01 1.35
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value      prob sig
+## Sign Bias            3.051 2.304e-03 ***
+## Negative Sign Bias   1.529 1.264e-01    
+## Positive Sign Bias   2.063 3.919e-02  **
+## Joint Effect        25.186 1.411e-05 ***
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     125.2    1.151e-17
+## 2    30     134.8    1.392e-15
+## 3    40     160.9    9.583e-17
+## 4    50     181.2    4.756e-17
+## 
+## 
+## Elapsed time : 0.4982839
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwGarch, }\AttributeTok{which=}\StringTok{"all"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## please wait...calculating quantiles...
+\end{verbatim}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwGarch, }\AttributeTok{which=}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{arma.garch.t }\OtherTok{=} \FunctionTok{ugarchspec}\NormalTok{(}\AttributeTok{mean.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{armaOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{include.mean =} \ConstantTok{FALSE}\NormalTok{),}
+\AttributeTok{variance.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{garchOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)),}
+\AttributeTok{distribution.model =} \StringTok{"std"}\NormalTok{)}
+\NormalTok{vwGarch.t }\OtherTok{=} \FunctionTok{ugarchfit}\NormalTok{(}\AttributeTok{data=}\NormalTok{vw, }\AttributeTok{spec=}\NormalTok{arma.garch.t)}
+\FunctionTok{show}\NormalTok{(vwGarch.t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : sGARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : std 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error  t value Pr(>|t|)
+## omega   0.000002    0.000002   1.1069 0.268325
+## alpha1  0.114004    0.026049   4.3765 0.000012
+## beta1   0.876326    0.025452  34.4308 0.000000
+## shape   6.980602    1.244478   5.6093 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error  t value Pr(>|t|)
+## omega   0.000002    0.000008  0.25476 0.798908
+## alpha1  0.114004    0.096632  1.17978 0.238089
+## beta1   0.876326    0.098073  8.93549 0.000000
+## shape   6.980602    2.846402  2.45243 0.014189
+## 
+## LogLikelihood : 7151.623 
+## 
+## Information Criteria
+## ------------------------------------
+##                     
+## Akaike       -6.3086
+## Bayes        -6.2985
+## Shibata      -6.3086
+## Hannan-Quinn -6.3049
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                      3.390  0.0656
+## Lag[2*(p+q)+(p+q)-1][2]     3.393  0.1099
+## Lag[4*(p+q)+(p+q)-1][5]     4.779  0.1716
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic  p-value
+## Lag[1]                      6.988 0.008208
+## Lag[2*(p+q)+(p+q)-1][5]    11.808 0.003128
+## Lag[4*(p+q)+(p+q)-1][9]    12.862 0.011494
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]   0.01185 0.500 2.000  0.9133
+## ARCH Lag[5]   0.19013 1.440 1.667  0.9678
+## ARCH Lag[7]   0.20868 2.315 1.543  0.9967
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  38.3296
+## Individual Statistics:             
+## omega  5.3989
+## alpha1 0.6390
+## beta1  0.7948
+## shape  0.1110
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          1.07 1.24 1.6
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value      prob sig
+## Sign Bias            3.081 2.087e-03 ***
+## Negative Sign Bias   1.845 6.519e-02   *
+## Positive Sign Bias   2.230 2.583e-02  **
+## Joint Effect        26.475 7.586e-06 ***
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     83.78    4.114e-10
+## 2    30    107.12    6.871e-11
+## 3    40    120.23    3.280e-10
+## 4    50    132.68    1.218e-09
+## 
+## 
+## Elapsed time : 0.4112041
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwGarch.t, }\AttributeTok{which=}\StringTok{"all"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## please wait...calculating quantiles...
+\end{verbatim}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwGarch.t, }\AttributeTok{which=}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (b)}
+\NormalTok{vwforecast}\OtherTok{=}\FunctionTok{ugarchforecast}\NormalTok{(vwGarch.t, }\AttributeTok{data =}\NormalTok{ vw, }\AttributeTok{n.ahead =} \DecValTok{5}\NormalTok{)}
+\FunctionTok{show}\NormalTok{(vwforecast)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *------------------------------------*
+## *       GARCH Model Forecast         *
+## *------------------------------------*
+## Model: sGARCH
+## Horizon: 5
+## Roll Steps: 0
+## Out of Sample: 0
+## 
+## 0-roll forecast [T0=1976-03-16]:
+##     Series   Sigma
+## T+1      0 0.01014
+## T+2      0 0.01020
+## T+3      0 0.01025
+## T+4      0 0.01031
+## T+5      0 0.01036
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwforecast,}\AttributeTok{which=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-7.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(vwforecast,}\AttributeTok{which=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Answers-to-Questions-1-to-7_files/figure-latex/unnamed-chunk-7-8.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c)}
+\NormalTok{arma.aparch.t }\OtherTok{=} \FunctionTok{ugarchspec}\NormalTok{(}\AttributeTok{mean.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{armaOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{include.mean =} \ConstantTok{FALSE}\NormalTok{),}
+\AttributeTok{variance.model=}\FunctionTok{list}\NormalTok{(}\AttributeTok{model=}\StringTok{"apARCH"}\NormalTok{,}
+\AttributeTok{garchOrder=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)),}
+\AttributeTok{distribution.model =} \StringTok{"std"}\NormalTok{)}
+\NormalTok{vwGarch.a }\OtherTok{=} \FunctionTok{ugarchfit}\NormalTok{(}\AttributeTok{data=}\NormalTok{vw, }\AttributeTok{spec=}\NormalTok{arma.aparch.t)}
+\FunctionTok{show}\NormalTok{(vwGarch.a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : apARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : std 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error   t value Pr(>|t|)
+## omega   0.000487    0.000329    1.4784 0.139313
+## alpha1  0.100537    0.021684    4.6365 0.000004
+## beta1   0.904242    0.024547   36.8374 0.000000
+## gamma1  1.000000    0.000980 1020.6524 0.000000
+## delta   0.900756    0.123228    7.3097 0.000000
+## shape   7.872547    1.297146    6.0691 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error  t value Pr(>|t|)
+## omega   0.000487         NaN      NaN      NaN
+## alpha1  0.100537         NaN      NaN      NaN
+## beta1   0.904242         NaN      NaN      NaN
+## gamma1  1.000000         NaN      NaN      NaN
+## delta   0.900756         NaN      NaN      NaN
+## shape   7.872547         NaN      NaN      NaN
+## 
+## LogLikelihood : 7215.757 
+## 
+## Information Criteria
+## ------------------------------------
+##                     
+## Akaike       -6.3634
+## Bayes        -6.3483
+## Shibata      -6.3634
+## Hannan-Quinn -6.3579
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                      3.802 0.05118
+## Lag[2*(p+q)+(p+q)-1][2]     3.862 0.08214
+## Lag[4*(p+q)+(p+q)-1][5]     4.653 0.18309
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic   p-value
+## Lag[1]                      12.56 0.0003951
+## Lag[2*(p+q)+(p+q)-1][5]     12.88 0.0016288
+## Lag[4*(p+q)+(p+q)-1][9]     13.90 0.0065675
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]    0.1770 0.500 2.000  0.6740
+## ARCH Lag[5]    0.3049 1.440 1.667  0.9390
+## ARCH Lag[7]    1.2287 2.315 1.543  0.8738
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  NaN
+## Individual Statistics:            
+## omega  1.737
+## alpha1 1.514
+## beta1  2.060
+## gamma1   NaN
+## delta  1.805
+## shape  0.136
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          1.49 1.68 2.12
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value      prob sig
+## Sign Bias            1.363 0.1730265    
+## Negative Sign Bias   2.973 0.0029797 ***
+## Positive Sign Bias   2.460 0.0139612  **
+## Joint Effect        16.909 0.0007378 ***
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     85.37    2.171e-10
+## 2    30    104.29    1.990e-10
+## 3    40    110.24    1.012e-08
+## 4    50    134.53    6.632e-10
+## 
+## 
+## Elapsed time : 3.775022
+\end{verbatim}
+
+\end{document}
